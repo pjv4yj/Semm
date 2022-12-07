@@ -3,6 +3,7 @@ import itertools
 def get_register_permutations():
 
     """
+    This function generates every register permutation for x86 registers
     """
 
     permutations = []

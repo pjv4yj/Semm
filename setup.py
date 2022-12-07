@@ -6,4 +6,4 @@ setup(name='semm_ops',
       author='Paul Vann',
       author_email='paul@vanntechcyber.com',
       packages=['semm_ops', 'semm_ops.logging'],
-     )
+)

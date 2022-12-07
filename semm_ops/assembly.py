@@ -53,6 +53,9 @@ class Assembler:
     def get_assembly_code(self, operation_list: list):
 
         """
+        This function generates a full string of the assembly code,
+        for self.reassemble() to convert it back into hex bytecode.
+        
         Arguments:
             operation_list(list): Python List of tuples containing each instruction's mnemonic and op_str
 
