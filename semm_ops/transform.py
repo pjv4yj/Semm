@@ -6,6 +6,7 @@ import random
 from semm_ops.registers import get_register_permutations
 from semm_ops.assembly import Assembler
 import re
+import copy
 
 class Transform:
 
@@ -23,7 +24,8 @@ class Transform:
         """
 
         permutations = get_register_permutations()
-        a = Assembler()
+        byte_codes = []
+        assembler = Assembler()
 
         i = 0
         for perm in permutations:
@@ -35,10 +37,11 @@ class Transform:
                 pattern = re.compile("|".join(perm.keys()))
                 operation[1] = pattern.sub(lambda m: perm[re.escape(m.group(0))], operation[1])
 
-            full_string = a.get_assembly_code(operation_arr)
-            try:
-                byte_str = a.reassemble(full_string)
-                print(byte_str)
-            except:
-                print("Error")
-                continue
+            assembly_code = assembler.get_assembly_code(operation_arr)
+            byte_code = assembler.reassemble(assembly_code)
+            byte_codes.append(byte_code)
+            #except:
+                #print("Error")
+                #continue
+
+        return byte_codes
