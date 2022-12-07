@@ -1,0 +1,11 @@
+setup.py
+semm_ops/__init__.py
+semm_ops/assembly.py
+semm_ops/disassembly.py
+semm_ops/registers.py
+semm_ops/transform.py
+semm_ops.egg-info/PKG-INFO
+semm_ops.egg-info/SOURCES.txt
+semm_ops.egg-info/dependency_links.txt
+semm_ops.egg-info/top_level.txt
+semm_ops/logging/logger.py
